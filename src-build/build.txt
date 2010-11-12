@@ -1,6 +1,0 @@
-
-scripts/core/main.js
-----------------
-scripts/core/main.js
-scripts/core/debug.js
-scripts/h5f/h5f.js
