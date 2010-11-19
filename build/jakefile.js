@@ -13,8 +13,7 @@ var path = require('path'),
     fs = require('fs'),
     sys = require('sys'),
 	jslint = require('jslint').JSLINT,
-	less = require('less'),
-	spawn = require('child_process').spawn;
+	less = require('less');
 
 
 var taskHeader = function(task){
@@ -41,27 +40,6 @@ task('default', ['less'], function (params) {
 });
 
 
-// requirejs *******************************************************************
-desc('requirejs build');
-task('requirejs', [], function (params) {
-	taskHeader(this);
-	/*var args = '-classpath ' + dir.rhino + ';' + dir.closure + ' org.mozilla.javascript.tools.shell.Main ' + dir.requirejs + '/build.js ' + 'app.build.js';*/
-	var args = [dir.rhino];
-	console.log(args);	
-	var java = spawn('java', args);
-
-    java.stdout.on('data', function (data) {
-      sys.print('stdout: ' + data);
-    });
-
-    java.stderr.on('data', function (data) {
-      sys.print('stderr: ' + data);
-    });
-
-    java.on('exit', function (code) {
-      console.log('child process exited with code ' + code);
-    });
-});
 // less ************************************************************************
 desc('less compilation');
 task('less', [], function (params) {
