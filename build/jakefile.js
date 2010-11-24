@@ -1,20 +1,9 @@
-/* 
-combine js
-jslint js
-
-combine less
-
-compress js/css
-
-*/
 require.paths.unshift('../lib');
-
 var path = require('path'),
     fs = require('fs'),
     sys = require('sys'),
 	jslint = require('jslint').JSLINT,
 	less = require('less');
-
 
 var taskHeader = function(task){
 	sys.puts('');
